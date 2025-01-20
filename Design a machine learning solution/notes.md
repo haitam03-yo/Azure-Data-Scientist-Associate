@@ -61,5 +61,39 @@ Each machine learning model requires a specific data format as input. After iden
 ---
 
 
+# Choose How to Serve Data to Machine Learning Workflows
 
-# Choose how to serve data to machine learning workflows
+To access data when training machine learning models, it is essential to serve the data by storing it in a cloud data service. Storing data separately from your compute resources helps to:
+
+* **Minimize costs**
+* **Increase flexibility**
+
+---
+
+## Best Practice: Separate Compute from Storage
+
+It is a best practice to separate data storage and model training into different services. This ensures that:
+
+* If you need to shut down or scale a compute resource, your data remains safe and accessible.
+
+---
+
+## Storing Data for Model Training Workloads
+
+For services like  **Azure Machine Learning** ,  **Azure Databricks** , and  **Azure Synapse Analytics** —which are commonly used for model training—you can serve and store data using these popular options:
+
+1. **Azure Blob Storage**
+   * Best for files, images, and other unstructured data.
+2. **Azure Data Lake Storage (Gen 2)**
+   * Similar to Blob Storage but designed for larger-scale, more advanced use cases.
+3. **Azure SQL Database**
+   * Suitable for structured data that requires relational database support.
+
+---
+
+## Loading Data into These Solutions
+
+To load data into one of these storage solutions, you can use a **pipeline** to perform the ETL (Extract, Transform, Load) process.
+
+
+---
