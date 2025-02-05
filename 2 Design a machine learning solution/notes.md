@@ -102,6 +102,7 @@ The choice of service for training machine learning models depends on factors li
 
 * **CPU vs. GPU** : GPUs are preferred for deep learning or large-scale computations.
 * **General Purpose vs. Memory-Optimized** : Depends on the nature of the workload.
+  general purpose : balanced cpu to memory ratio for test and small dataset, Memory-Optimized for memory-to-CPU ratio.
 * **Spark Clusters** : For distributed computing on large datasets.
 
  **Tip** : Monitor compute utilization during training to optimize resource usage and scale as needed.
@@ -126,10 +127,9 @@ To decide whether to design a real-time or batch deployment solution, you need t
 * How much compute power is needed to execute the model?
 
 in real time prediction the resources should always be active and return the results almost immediatly
-we can use services like azure container instance or azure kubernet services they provide a lightweight infrastructure for your deployed model, but the compute will be always on you can't pause, or stop the compute as the model must always be available for immediate predictions.
+we can use services like **azure container instance or azure kubernet services** they provide a lightweight infrastructure for your deployed model, but the compute will be always on you can't pause, or stop the compute as the model must always be available for immediate predictions.
 
 Alternatively, if you need  **batch predictions** , you need compute that can handle a large workload. Ideally, you'd use a **compute cluster** that can score the data in *parallel* batches by using multiple nodes. and because the nodes are activated only when the batch scoring is trigered you can save significant costs.
-
 
 # Monitor the Model
 
